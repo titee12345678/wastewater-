@@ -405,35 +405,6 @@ function App() {
           aria-label="3D wastewater treatment plant"
         >
           <div className="scene-toolbar" aria-label="3D scene controls">
-            <div className="view-angle-controls" style={{ display: 'flex', gap: '4px', marginRight: 'auto', background: 'rgba(255,255,255,0.9)', padding: '4px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              {(["iso", "top", "front", "back", "left", "right", "bottom"] as ViewAngle[]).map((angle) => {
-                const labels: Record<string, string> = { iso: "ISO", top: "บน", bottom: "ล่าง", left: "ซ้าย", right: "ขวา", front: "หน้า", back: "หลัง" };
-                return (
-                  <button
-                    key={angle}
-                    type="button"
-                    onClick={() => {
-                      setViewAngle(angle);
-                      if (isFlowTourRunning) stopFlowTour();
-                      setSelectedUnitId("");
-                    }}
-                    style={{
-                      padding: '4px 10px',
-                      fontSize: '12px',
-                      fontWeight: viewAngle === angle ? 600 : 400,
-                      background: viewAngle === angle ? '#0c6f7a' : 'transparent',
-                      color: viewAngle === angle ? '#fff' : '#475569',
-                      border: 'none',
-                      borderRadius: '4px',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    {labels[angle]}
-                  </button>
-                );
-              })}
-            </div>
 
             <button type="button" className="scene-toolbar__primary" onClick={isFlowTourRunning ? stopFlowTour : startFlowTour}>
               {isFlowTourRunning ? <Square size={15} /> : <Play size={17} />}
