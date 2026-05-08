@@ -406,6 +406,12 @@ function App() {
         >
           <div className="scene-toolbar" aria-label="3D scene controls">
 
+            {!isFlowTourRunning && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginRight: 'auto', background: 'rgba(255,255,255,0.95)', padding: '6px 12px', borderRadius: '20px', boxShadow: '0 2px 10px rgba(12, 111, 122, 0.2)', animation: 'pulseHint 2s infinite', border: '1px solid rgba(12, 111, 122, 0.3)' }}>
+                <span style={{ display: 'block', width: '8px', height: '8px', borderRadius: '50%', background: '#0c6f7a' }} />
+                <span style={{ fontSize: '12px', fontWeight: 700, color: '#0c6f7a', whiteSpace: 'nowrap' }}>เริ่มทัวร์ระบบน้ำตรงนี้ 👉</span>
+              </div>
+            )}
             <button type="button" className="scene-toolbar__primary" onClick={isFlowTourRunning ? stopFlowTour : startFlowTour}>
               {isFlowTourRunning ? <Square size={15} /> : <Play size={17} />}
               <span>{isFlowTourRunning ? "หยุด Flow Tour" : "Play Flow Tour"}</span>

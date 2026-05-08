@@ -2380,3 +2380,9 @@ h1 span {
     transition-duration: 0.001ms !important;
   }
 }
+
+@keyframes pulseHint {
+  0% { transform: scale(1); box-shadow: 0 2px 10px rgba(12, 111, 122, 0.2); }
+  50% { transform: scale(1.03); box-shadow: 0 4px 15px rgba(12, 111, 122, 0.4); }
+  100% { transform: scale(1); box-shadow: 0 2px 10px rgba(12, 111, 122, 0.2); }
+}
